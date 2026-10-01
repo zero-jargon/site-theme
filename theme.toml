@@ -1,0 +1,16 @@
+name = 'site-theme'
+license = 'MIT'
+licenselink = 'https://github.com/zero-jargon/site-theme/blob/main/LICENSE'
+description = 'Shared Hugo theme for 0J Consulting sites (dfir.fi, csoc.fi)'
+
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/zero-jargon/site-theme'
+
+# Taxonomy terms
+tags = ['provider', 'list', 'blog']
+features = ['provider-list', 'git-lastmod', 'sister-site', 'referral-tags']
+
+# If the theme has a single author
+[author]
+  name = 'Juho Jauhiainen'
+  homepage = 'https://0j.fi'

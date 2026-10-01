@@ -1,0 +1,27 @@
+<header class="site-header">
+    <div class="menu">
+        {{ $page := . }}
+        {{ range .Site.Menus.main }}
+            {{ if eq .Name "Home" }}
+                <a href="{{ .URL }}" class="logo" aria-label="{{ site.Params.brand | default site.Title }} home">
+                    <img src="{{ "images/logo.png" | relURL }}" alt="{{ site.Params.brand | default site.Title }}">
+                </a>
+            {{ end }}
+        {{ end }}
+        <button class="hamburger" id="hamburger" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-links" id="nav-links">
+            {{ range .Site.Menus.main }}
+                {{ if ne .Name "Home" }}
+                    {{ $active := or ($page.IsMenuCurrent "main" .) ($page.HasMenuCurrent "main" .) }}
+                    <a href="{{ .URL }}"{{ if $active }} class="active" aria-current="page"{{ end }}>{{ .Name }}</a>
+                {{ end }}
+            {{ end }}
+            {{ with site.Params.sisterSite }}
+                <a href="{{ .url }}" class="sister-link" data-sister>{{ .name }} <span aria-hidden="true">&nearr;</span></a>
+            {{ end }}
+            {{ with site.Home.OutputFormats.Get "rss" }}<a href="{{ .RelPermalink }}" class="rss-link" target="_blank" rel="noopener" aria-label="RSS feed"><i class="fa fa-rss"></i></a>{{ end }}
+        </nav>
+    </div>
+</header>
