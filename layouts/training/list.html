@@ -3,7 +3,7 @@
     {{ $today := time.Format "2006-01-02" now }}
     {{ $pages := where .Pages "Params.draft" "ne" true }}
     <header class="page-head">
-        <h1>{{ with site.Params.brand }}{{ . }} {{ end }}{{ .Title }}</h1>
+        <h1>{{ with site.Params.trainingTitle }}{{ . }}{{ else }}{{ with site.Params.brand }}{{ . }} {{ end }}{{ $.Title }}{{ end }}</h1>
         <div class="lede">{{ .Content }}</div>
     </header>
 

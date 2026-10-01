@@ -15,6 +15,7 @@ wordmark image. Relevant `hugo.toml` params:
 | Param | Purpose | Example (dfir.fi) |
 |-------|---------|-------------------|
 | `brand` | `<title>` prefix, logo alt/aria-label, Training H1 prefix | `"DFIR-FI"` |
+| `trainingTitle` | full Training H1, overriding `brand` + page title (optional) | `"DFIR Training"` |
 | `siteName` | footer copyright line | `"dfir.fi"` |
 | `company_name` / `company_link` | footer "operated by" | `"0J Consulting Oy"` / `"https://0j.fi"` |
 | `referralQuery` | appended to outbound provider/training links | `"utm_source=dfir.fi&utm_medium=referral"` |
